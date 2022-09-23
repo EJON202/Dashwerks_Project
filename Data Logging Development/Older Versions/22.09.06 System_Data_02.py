@@ -22,7 +22,7 @@ class SystemData:
 
         # TODO add rest of them..
   
-    # get and set
+######################## get and sets ######################
     def get_entry_number(self):
         return self.entry_number
     def set_entry_number(self, entry_number):
@@ -76,6 +76,9 @@ class SystemData:
     def set_gps_longitude(self, gps_longitude):
         self.gps_longitude = gps_longitude
 
+
+#####################################                    ##################################
+
     # class to string
     def __str__(self):
         sysString = f"{self.entry_number},{self.gps_time},{self.rpm},{self.water_temp},{self.oil_pressure},{self.pyrometer_1},{self.pyrometer_2},{self.gps_longitude},{self.system_status}"
@@ -84,7 +87,7 @@ class SystemData:
 
 
 import numpy as np
-def main()
+def main():
     # make fake data to test
     entry_number = 1
     nData = 100

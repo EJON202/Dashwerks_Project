@@ -47,7 +47,7 @@ def main():
     fo = open(fn, "w+") #########
     fo.write(Buffer)
     fo.close()
-    print("done ..."    
+    print("done ...")
 
 main()
 
