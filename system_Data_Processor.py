@@ -1,4 +1,4 @@
-from systemData import systemData
+from System_Data_02 import SystemData
 # tester
 import numpy as np
 def main():

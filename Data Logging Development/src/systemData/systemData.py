@@ -1,31 +1,28 @@
-from asyncio.windows_events import NULL
-import csv
-from msilib.schema import Class
-import numbers
 
 
 
 
-class readSerial:
-    def __init__ (self):
+
+# class readSerial:
+#     def __init__ (self):
     
-    def retriveArduinoData():                   ##this opens a serial port on the pi to recive live data
-        if __name__ == '__main__':              ##from on an arduino over the serial comms. The data comes in as
-            ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)  #a single string
-            ser.reset_input_buffer()
+#     def retriveArduinoData():                   ##this opens a serial port on the pi to recive live data
+#         if __name__ == '__main__':              ##from on an arduino over the serial comms. The data comes in as
+#             ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)  #a single string
+#             ser.reset_input_buffer()
 
-        if ser.in_waiting > 0:
-            rawInput = ser.readline().decode('utf-8').rstrip()
-            return(rawInput)
+#         if ser.in_waiting > 0:
+#             rawInput = ser.readline().decode('utf-8').rstrip()
+#             return(rawInput)
 
-        data_List = rawInput.split(',')
+#         data_List = rawInput.split(',')         ## splitting our stirng to a list
 
-        return(data_List)
+#         return(data_List)
 
-    data_List = retriveArduinoData():
+#     data_List = retriveArduinoData():
 
-    def write_Excel_Line(data_List):
-        
+#     def write_Excel_Line(data_List):
+
 
 class SystemData:
 
@@ -43,7 +40,6 @@ class SystemData:
         self.gps_longitude = gps_longitude
 
 
-        # TODO add rest of them..
 
 
 ######################## get and sets ######################
@@ -106,23 +102,3 @@ class SystemData:
     def __str__(self):
         sysString = f"{self.entry_number},{self.gps_time},{self.rpm},{self.water_temp},{self.oil_pressure},{self.pyrometer_1},{self.pyrometer_2},{self.gps_longitude},{self.system_status}"
         return sysString
-
-
-
-
-
-
-
-
-import numpy as np
-def main():
-    # make fake data to test
-    entry_number = 1
-    nData = 100
-    arr = np.empty(nData)
-
-    for i in range(nData):
-        arr[i] = SystemData(i)
-
-
-   

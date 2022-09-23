@@ -1,0 +1,7 @@
+setup.py
+src/dashwerks.egg-info/PKG-INFO
+src/dashwerks.egg-info/SOURCES.txt
+src/dashwerks.egg-info/dependency_links.txt
+src/dashwerks.egg-info/top_level.txt
+src/systemData/init.py
+src/systemData/systemData.py
