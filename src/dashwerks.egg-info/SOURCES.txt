@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/dashwerks/__init__.py
+src/dashwerks/systemData.py
+src/dashwerks.egg-info/PKG-INFO
+src/dashwerks.egg-info/SOURCES.txt
+src/dashwerks.egg-info/dependency_links.txt
+src/dashwerks.egg-info/top_level.txt
