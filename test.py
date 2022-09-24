@@ -1,5 +1,17 @@
-import dashwerks as dw 
+from fileinput import close
+import dashwerks as dw
 
+fn = "exampleArduinoData.txt"
+BLUE_RPM = 400
 
-sd1 = dw.SystemData(1)
-print(sd1)
+entry_number = 1
+with open(fn,"r") as file:
+    ln = file.readline()
+    sd = dw.SystemData(entry_number, ln)
+
+    if sd.get_rpm() <= BLUE_RPM:
+        # add somthing to light up somthing..
+        print("Blue")
+    else:
+        print("Flass Red RPM!!")
+

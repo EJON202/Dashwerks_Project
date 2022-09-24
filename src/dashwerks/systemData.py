@@ -22,21 +22,28 @@
 
 #     def write_Excel_Line(data_List):
         
-
+# gps_time ,rpm, water_temp,oil_pressure, pyrometer_1, pyrometer_2, gps_longitude, gps_latitude, system_status
 class SystemData:
 
-    def __init__(self, entry_number, gps_time="0:0:0", rpm=0, water_temp=-1,                    ####intake new data upon 
-                     oil_pressure=-1, pyrometer_1=-1, pyrometer_2=-1, gps_longitude=-1,
-                     system_status="Init"):
-        self.entry_number = entry_number
-        self.gps_time = gps_time
-        self.rpm = rpm
-        self.water_temp = water_temp
-        self.system_status = system_status
-        self.oil_pressure = oil_pressure
-        self.pyrometer_1 = pyrometer_1
-        self.pyrometer_2 = pyrometer_2
-        self.gps_longitude = gps_longitude
+    def __init__(self, entry_number, ardStr=""):
+        try:
+            gps_time,rpm, water_temp, \
+            oil_pressure, pyrometer_1, \
+            pyrometer_2, gps_longitude, \
+            gps_latitude, system_status  = ardStr.split(",")
+
+            self.entry_number = entry_number
+            self.gps_time = gps_time    # find a data type you might like
+            self.rpm = float(rpm)            
+            self.water_temp = float(water_temp)
+            self.system_status = system_status
+            self.oil_pressure = float(oil_pressure)
+            self.pyrometer_1 = float(pyrometer_1)
+            self.pyrometer_2 = float(pyrometer_2)
+            self.gps_longitude = gps_longitude
+        except Exception as e:
+            print(e)
+            pass
 
 ######################## get and sets ######################
     def get_entry_number(self):
